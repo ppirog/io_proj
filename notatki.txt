@@ -1,0 +1,22 @@
+Ogólne informacje:
+
+Logowanie (bez rejestracji)
+
+petla musi byc uzyta w celu zalogowania sie do systemu
+jak uzytkownik poda poprawne dane to zostanie zalogowany (mozna zeby uniknac procesu rejestracji dodać przez wszystkim jakiegoś przykladowego uzytkownikow [nauczyiel:nauczyciel], [student:student])
+
+
+logowanie (bez rejestracji)
+
+petla musi byc uzyta w celu zalogowania sie do systemu
+jak poda dane poprawen to przekierowanie do strony glownej
+tutaj czeka opcja dodaj kurs i wybierz kurs
+
+dopiero jak wybierze kurs to pojawia się opcja dodaj material i ocen(dla nauczyciela) i pobierz materialy (dla studenta)
+
+i tak w kółko
+z mozliwościa wylogwania
+
+
+
+
