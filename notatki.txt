@@ -1,5 +1,9 @@
 Ogólne informacje:
 
+Podczas tworzenia klasy System dodałbym w konstruktorze systemu Wydział wywołując jego konstruktor, oraz dodałbym obrazu do wydziału z 2 nauczycieli aby pominąć rejestrację oraz już do samego Systemu dodałbym Studentów (3?), aby już działać na istniejących Użytkowników.
+
+Podczas logowania dodałbym opcje kto się loguję Student czy Nauczyciel (jeżeli ta opcja będzie wybrana to trzeba będzie wybrać wydział i dopiero tam sprawdzać czy istnieje taki nauczyciel) przy tym wywołując odpowiednie metody dalej.
+
 Logowanie (bez rejestracji)
 
 petla musi byc uzyta w celu zalogowania sie do systemu
