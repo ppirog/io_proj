@@ -1,0 +1,3 @@
+D:/Studia/io/io_proj/cmake-build-debug/CMakeFiles/io_proj.dir
+D:/Studia/io/io_proj/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Studia/io/io_proj/cmake-build-debug/CMakeFiles/rebuild_cache.dir

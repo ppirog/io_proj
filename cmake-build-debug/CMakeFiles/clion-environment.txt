@@ -1,0 +1,5 @@
+ToolSet: 9.0 w64 (local)@D:\MinGW
+Ninja: 1.11.1@D:\Jet Brains\CLion 2023.2.2\bin\ninja\win\x64\ninja.exe
+Options: 
+
+Options:

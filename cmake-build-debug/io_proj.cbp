@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="io_proj"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Studia/io/io_proj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="io_proj">
+				<Option output="D:/Studia/io/io_proj/cmake-build-debug/io_proj.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Studia/io/io_proj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Studia/io/io_proj/kod"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0/x86_64-w64-mingw32"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 io_proj"/>
+					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="io_proj/fast">
+				<Option output="D:/Studia/io/io_proj/cmake-build-debug/io_proj.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Studia/io/io_proj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Studia/io/io_proj/kod"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0/x86_64-w64-mingw32"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="d:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 io_proj/fast"/>
+					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Studia/io/io_proj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Studia/io/io_proj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;D:/Studia/io/io_proj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Studia/io/io_proj/kod/Kurs.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Kurs.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Nauczyciel.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Nauczyciel.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Student.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Student.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/System.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/System.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Uzytkownik.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Uzytkownik.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Wydzial.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/Wydzial.h">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/kod/main.cpp">
+			<Option target="io_proj"/>
+		</Unit>
+		<Unit filename="D:/Studia/io/io_proj/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
