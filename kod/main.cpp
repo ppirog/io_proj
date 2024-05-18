@@ -88,6 +88,11 @@ int main() {
                         int wybor;
                         cin >> wybor;
 
+                        if (wybor == 4) {
+                            system->wyloguj(login, haslo);
+                            break;
+                        }
+
                     }
                 }
             } else {
