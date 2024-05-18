@@ -117,18 +117,21 @@ int main() {
                                 while (true) {
 
                                     cout << "1. Wyswietl materialy" << endl;
-                                    cout << "2. Pokaz ocene" << endl;
-                                    cout << "3. Wyswietl prowadzacych" << endl;
-                                    cout << "4. Wyjdz z kursu" << endl;
+                                    cout << "2. Pobierz material" << endl;
+                                    cout << "3. Pokaz ocene" << endl;
+                                    cout << "4. Wyswietl prowadzacych" << endl;
+                                    cout << "5. Wyjdz z kursu" << endl;
 
                                     int wybor;
                                     cin >> wybor;
 
                                     if (wybor == 1) {
                                         kurs->wyswietlMaterialy();
-                                    } else if (wybor == 2) {
+                                    }else if(wybor == 2){
+                                        kurs->pobierzMaterialy();
+                                    }else if (wybor == 3) {
                                         kurs->wyswietlOcene(student);
-                                    } else if (wybor == 3) {
+                                    } else if (wybor == 4) {
                                         for (auto &i: kurs->getNauczyciele()) {
                                             cout << i->getImie() << " " << i->getNazwisko() << endl;
                                         }

@@ -52,6 +52,33 @@ void Kurs::wyswietlMaterialy() {
     }
 }
 
+void Kurs::pobierzMaterialy() {
+    if (materialy.size() == 0) {
+        cout << "Brak materialow na kursie " + this->nazwa << endl;
+        return;
+    }
+
+    int index = 0;
+    for(auto &i: this->materialy) {
+        cout <<  index << ". "<< "Tytul: " << i.first << " Tresc: " << i.second << endl;
+        index++;
+    }
+
+    int wybor;
+    cout << "Wybierz material do pobrania" << endl;
+    cin >> wybor;
+
+    if(wybor < 0 || wybor >= materialy.size()) {
+        cout << "Nie ma takiego materialu" << endl;
+        return;
+    }
+
+    cout << "Pomyslnie pobrano material:" << endl;
+    auto it = materialy.begin();
+    advance(it, wybor);
+    cout << "Tytul: " << it->first << " Tresc: " << it->second << endl;
+}
+
 void Kurs::usunMaterial(string tytul) {
     this->materialy.erase(tytul);
 }

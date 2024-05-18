@@ -39,6 +39,7 @@ public:
 	void dodajMaterialy(string tytul, string zawartosc);
 	void dodajStudenta(Student* student);
 	void wyswietlMaterialy();
+    void pobierzMaterialy();
 	void usunMaterial(string tytul);
 	void ocenStudentow();
 	void setNazwa(string nazwa);
