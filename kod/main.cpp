@@ -108,12 +108,16 @@ int main() {
                                 int wybor;
                                 cin >> wybor;
                                 if (wybor == 1) {
-                                    cout << "Wybierz kurs: " << endl;
+                                    cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
                                     for (int i = 0; i < wydzial->getKursy().size(); i++) {
                                         cout << i << ". " << wydzial->getKursy()[i]->getNazwa() << endl;
                                     }
                                     int wybor;
                                     cin >> wybor;
+
+                                    if(wybor == -1){
+                                        continue;
+                                    }
                                     Kurs *kurs = wydzial->getKursy()[wybor];
                                     student->dodajKurs(kurs);
                                     kurs->dodajStudenta(student);
