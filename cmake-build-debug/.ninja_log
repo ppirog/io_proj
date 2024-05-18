@@ -18,3 +18,12 @@
 4086	5136	7377304829352400	io_proj.exe	578f6ee1c076a60a
 9	1292	7377306387304508	CMakeFiles/io_proj.dir/kod/main.cpp.obj	bb7fb090ac03461d
 1293	2279	7377306397156417	io_proj.exe	578f6ee1c076a60a
+15	2391	7377389872422596	CMakeFiles/io_proj.dir/kod/main.cpp.obj	bb7fb090ac03461d
+145	3773	7377389886162812	CMakeFiles/io_proj.dir/kod/Kurs.cpp.obj	a3bf3e3f6e0298be
+250	3959	7377389888082757	CMakeFiles/io_proj.dir/kod/Nauczyciel.cpp.obj	1d41bd7f0390bcd7
+379	4517	7377389893627997	CMakeFiles/io_proj.dir/kod/Student.cpp.obj	6213740103f437f8
+548	5610	7377389904585433	CMakeFiles/io_proj.dir/kod/System.cpp.obj	afb51e0b5e03579f
+650	5945	7377389907942779	CMakeFiles/io_proj.dir/kod/Wydzial.cpp.obj	7fec0f7db9d7e79b
+5946	7635	7377389924827518	io_proj.exe	578f6ee1c076a60a
+9	1539	7377404148003721	CMakeFiles/io_proj.dir/kod/Kurs.cpp.obj	a3bf3e3f6e0298be
+1539	2541	7377404158007063	io_proj.exe	578f6ee1c076a60a

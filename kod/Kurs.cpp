@@ -61,7 +61,7 @@ void Kurs::ocenStudentow() {
         int ocena;
         cout << "Podaj ocene dla studenta " + i->getNazwisko() << endl;
         cin >> ocena;
-        this->oceny.insert(pair<Student*, int>(i, ocena));
+        oceny[i] = ocena;
     }
 }
 
