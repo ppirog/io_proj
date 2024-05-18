@@ -1,0 +1,3 @@
+C:/STUDIA/STUDIA_INF_2022-25/4_sem/IO/lab/lab8/io_proj/cmake-build-debug/CMakeFiles/io_proj.dir
+C:/STUDIA/STUDIA_INF_2022-25/4_sem/IO/lab/lab8/io_proj/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/STUDIA/STUDIA_INF_2022-25/4_sem/IO/lab/lab8/io_proj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
