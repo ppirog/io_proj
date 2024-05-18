@@ -52,9 +52,15 @@ void Wydzial::dodajKurs(Kurs* kurs) {
 }
 
 void Wydzial::wyswietlKursy() {
-    cout << "Kursy na wydziale " + this->nazwa << endl;
-    for (int i = 0; i < this->kursy.size(); i++) {
-        cout << this->kursy[i]->getNazwa() << endl;
+
+    if(kursy.size() == 0) {
+        cout << "Brak kursow na wydziale " + this->nazwa << endl;
+    }else {
+
+        cout << "Kursy na wydziale " + this->nazwa << endl;
+        for (int i = 0; i < this->kursy.size(); i++) {
+            cout << this->kursy[i]->getNazwa() << endl;
+        }
     }
 }
 

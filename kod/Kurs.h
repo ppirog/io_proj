@@ -45,6 +45,8 @@ public:
 	string getNazwa();
     vector<Nauczyciel*> getNauczyciele();
     vector<Student*> getStudenci();
+    void wyswietlOcenyStudentow();
+    void wyswietlOcene(Student* student);
 private:
 	string nazwa;
 	Wydzial* wydzial;

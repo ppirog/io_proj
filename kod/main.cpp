@@ -34,7 +34,7 @@ int main() {
     Wydzial *wydzial2 = new Wydzial("Medyczny");
 
 
-    Student *student = new Student("Jan", "Nowak", "user", "user");
+    Student *student = new Student("Maciek", "Nowak", "user", "user");
     student->setIndeks(123456);
     system->dodajStudenta(student);
 
@@ -81,8 +81,9 @@ int main() {
 
                     while (true) {
                         cout << "1. Wyswietl zapisane kursy" << endl;
-                        cout << "2. Wybierz wydzial" << endl;
-                        cout << "3. Wyloguj" << endl;
+                        cout << "2. Wybierz kurs do ktorego jestes zapisany" << endl;
+                        cout << "3. Wybierz wydzial" << endl;
+                        cout << "4. Wyloguj" << endl;
 
                         int wybor;
                         cin >> wybor;
@@ -91,7 +92,53 @@ int main() {
                             for (auto &i: student->getDolaczoneKursy()) {
                                 cout << i->getNazwa() << endl;
                             }
-                        } else if (wybor == 2) {
+                        } else if(wybor == 2){
+                            if (student->getDolaczoneKursy().size() == 0) {
+                                cout << "Nie jestes zapisany na zadne kursy" << endl;
+                                continue;
+                            }
+
+                            cout << "Lista twoich kursow: " << endl;
+                            for (int i = 0; i < student->getDolaczoneKursy().size(); i++) {
+                                cout << i << ". " << student->getDolaczoneKursy()[i]->getNazwa() << endl;
+                            }
+
+                            int wybor;
+                            cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                            cin >> wybor;
+
+                            if (wybor == -1){
+                                continue;
+                            }else {
+
+                                Kurs *kurs = student->getDolaczoneKursy()[wybor];
+                                cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
+
+                                while (true) {
+
+                                    cout << "1. Wyswietl materialy" << endl;
+                                    cout << "2. Pokaz ocene" << endl;
+                                    cout << "3. Wyswietl prowadzacych" << endl;
+                                    cout << "4. Wyjdz z kursu" << endl;
+
+                                    int wybor;
+                                    cin >> wybor;
+
+                                    if (wybor == 1) {
+                                        kurs->wyswietlMaterialy();
+                                    } else if (wybor == 2) {
+                                        kurs->wyswietlOcene(student);
+                                    }else if (wybor == 3) {
+                                        for (auto &i: kurs->getNauczyciele()) {
+                                            cout << i->getImie() << " " << i->getNazwisko() << endl;
+                                        }
+                                    } else {
+                                        break;
+                                    }
+
+                                }
+                            }
+                        }else if (wybor == 3) {
                             cout << "Wybierz wydzial: " << endl;
                             for (int i = 0; i < system->getWydzialy().size(); i++) {
                                 cout << i << ". " << system->getWydzialy()[i]->getNazwa() << endl;
@@ -128,7 +175,7 @@ int main() {
                             }
 
                         }
-                        else if(wybor == 3){
+                        else if(wybor == 4){
                             break;
                         }
 
@@ -151,8 +198,9 @@ int main() {
 
                     while (true) {
                         cout << "1. Wyswietl kursy" << endl;
-                        cout << "2. Wybierz przypisany wydzial" << endl;
-                        cout << "3. Wyloguj" << endl;
+                        cout << "2. Wybierz utworzony kurs" << endl;
+                        cout << "3. Wybierz przypisany wydzial" << endl;
+                        cout << "4. Wyloguj" << endl;
 
                         int wybor;
                         cin >> wybor;
@@ -161,7 +209,71 @@ int main() {
                             for (auto &i: nauczyciel->getProwadzoneKursy()) {
                                 cout << i->getNazwa() << endl;
                             }
-                        } else if (wybor == 2) {
+                        }else if(wybor == 2){
+
+                            if (nauczyciel->getProwadzoneKursy().size() == 0) {
+                                cout << "Nie masz zadnych kursow" << endl;
+                                continue;
+                            }
+                            cout << "Lista twoich kursow: " << endl;
+                            for (int i = 0; i < nauczyciel->getProwadzoneKursy().size(); i++) {
+                                cout << i << ". " << nauczyciel->getProwadzoneKursy()[i]->getNazwa() << endl;
+                            }
+                            int wybor;
+                            cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                            cin >> wybor;
+
+                            if (wybor == -1){
+                                continue;
+                            }else {
+
+                                Kurs *kurs = nauczyciel->getProwadzoneKursy()[wybor];
+                                cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
+
+                                while(true) {
+
+
+                                    cout << "1. Dodaj material" << endl;
+                                    cout << "2. Wyswietl materialy" << endl;
+                                    cout << "3. Usun material" << endl;
+                                    cout << "4. Wyswietl studentow" << endl;
+                                    cout << "5. Ocen studentow" << endl;
+                                    cout << "6. Wyswietl oceny studentow" << endl;
+                                    cout << "7. Wyjdz z kursu" << endl;
+                                    int wybor;
+                                    cin >> wybor;
+
+                                    if (wybor == 1) {
+                                        cout << "Podaj tytul: ";
+                                        string tytul;
+                                        cin >> tytul;
+                                        cout << "Podaj tresc: ";
+                                        string tresc;
+                                        cin >> tresc;
+                                        kurs->dodajMaterialy(tytul, tresc);
+                                    } else if (wybor == 2) {
+                                        kurs->wyswietlMaterialy();
+                                    } else if (wybor == 3) {
+                                        cout << "Podaj tytul: ";
+                                        string tytul;
+                                        cin >> tytul;
+                                        kurs->usunMaterial(tytul);
+                                    } else if (wybor == 4) {
+                                        for (auto &i: kurs->getStudenci()) {
+                                            cout << i->getImie() << " " << i->getNazwisko() << endl;
+                                        }
+                                    } else if(wybor == 5){
+                                        kurs->ocenStudentow();
+                                    } else if(wybor == 6){
+                                        kurs->wyswietlOcenyStudentow();
+                                    }
+                                    else if(wybor == 7) {
+                                        break;
+                                    }
+                                }
+                            }
+
+                        }else if (wybor == 3) {
                             cout << "Wybierz wydzial: " << endl;
 
                             for(int i = 0; i < nauczyciel->getWydzialy().size();i++){
@@ -201,7 +313,7 @@ int main() {
                             }
 
                         }
-                        else if(wybor == 3){
+                        else if(wybor == 4){
                             break;
                         }
                     }

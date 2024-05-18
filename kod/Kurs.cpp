@@ -25,6 +25,7 @@ void Kurs::dodajNauczyciel(Nauczyciel * nauczyciel) {
 
 void Kurs::dodajMaterialy(string tytul, string zawartosc) {
     this->materialy.insert(pair<string, string>(tytul, zawartosc));
+    cout << "Dodano material" << endl;
 }
 
 void Kurs::dodajStudenta(Student* student) {
@@ -40,8 +41,14 @@ void Kurs::dodajStudenta(Student* student) {
 }
 
 void Kurs::wyswietlMaterialy() {
+
+    if (materialy.size() == 0) {
+        cout << "Brak materialow na kursie " + this->nazwa << endl;
+        return;
+    }
+
     for(auto &i: this->materialy) {
-        cout << i.first << " " << i.second << endl;
+        cout << "Tytul: " << i.first << " Tresc: " << i.second << endl;
     }
 }
 
@@ -50,7 +57,12 @@ void Kurs::usunMaterial(string tytul) {
 }
 
 void Kurs::ocenStudentow() {
-
+    for(auto &i: this->studenci) {
+        int ocena;
+        cout << "Podaj ocene dla studenta " + i->getNazwisko() << endl;
+        cin >> ocena;
+        this->oceny.insert(pair<Student*, int>(i, ocena));
+    }
 }
 
 void Kurs::setNazwa(string nazwa) {
@@ -69,6 +81,18 @@ vector<Nauczyciel *> Kurs::getNauczyciele() {
 vector<Student *> Kurs::getStudenci() {
     return studenci;
 }
+
+void Kurs::wyswietlOcenyStudentow() {
+    cout << "Oceny studentow:" << endl;
+
+    for (auto &i: this->oceny) {
+        cout << i.first->getIndeks() << " " << i.first->getNazwisko() << " " << i.first->getImie() << i.second << endl;
+    }
+
+};
+void Kurs::wyswietlOcene(Student* student){
+    cout << "Twoja ocena: " << this->oceny[student] << endl;
+};
 
 
 
