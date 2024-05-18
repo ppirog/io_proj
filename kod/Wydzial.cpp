@@ -40,10 +40,19 @@ void Wydzial::usunNauczyciela(Nauczyciel* nauczyciel) {
 }
 
 void Wydzial::dodajKurs(Kurs* kurs) {
+
+    for(auto &i: this->kursy) {
+        if(i->getNazwa() == kurs->getNazwa()) {
+            cout << "Kurs o podanej nazwie juz istnieje" << endl;
+            return;
+        }
+    }
+    cout << "Dodano kurs " + kurs->getNazwa() << endl;
     this->kursy.push_back(kurs);
 }
 
 void Wydzial::wyswietlKursy() {
+    cout << "Kursy na wydziale " + this->nazwa << endl;
     for (int i = 0; i < this->kursy.size(); i++) {
         cout << this->kursy[i]->getNazwa() << endl;
     }
@@ -59,6 +68,10 @@ void Wydzial::usunKurs(Kurs* kurs) {
 
 vector<Nauczyciel*> Wydzial::getNauczyciele() {
     return nauczyciele;
+}
+
+vector<Kurs *> Wydzial::getKursy() {
+    return kursy;
 }
 
 

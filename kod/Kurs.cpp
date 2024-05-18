@@ -10,6 +10,7 @@
 //
 
 
+#include <iostream>
 #include "Kurs.h"
 
 Kurs::Kurs(string nazwa, Wydzial* wydzial) {
@@ -19,23 +20,33 @@ Kurs::Kurs(string nazwa, Wydzial* wydzial) {
 }
 
 void Kurs::dodajNauczyciel(Nauczyciel * nauczyciel) {
-
+    this->nauczyciele.push_back(nauczyciel);
 }
 
 void Kurs::dodajMaterialy(string tytul, string zawartosc) {
-
+    this->materialy.insert(pair<string, string>(tytul, zawartosc));
 }
 
 void Kurs::dodajStudenta(Student* student) {
 
+    for(auto &i: this->studenci) {
+        if(i->getLogin() == student->getLogin()) {
+            cout << "Student jest juz zapisany na kurs" << endl;
+            return;
+        }
+    }
+    cout << "Zapisano na kurs studenta " + student->getNazwisko() << endl;
+    this->studenci.push_back(student);
 }
 
 void Kurs::wyswietlMaterialy() {
-
+    for(auto &i: this->materialy) {
+        cout << i.first << " " << i.second << endl;
+    }
 }
 
 void Kurs::usunMaterial(string tytul) {
-
+    this->materialy.erase(tytul);
 }
 
 void Kurs::ocenStudentow() {
@@ -43,7 +54,7 @@ void Kurs::ocenStudentow() {
 }
 
 void Kurs::setNazwa(string nazwa) {
-
+    this->nazwa = nazwa;
 }
 
 string Kurs::getNazwa() {
@@ -51,7 +62,13 @@ string Kurs::getNazwa() {
 
 }
 
-string Kurs::getNauczyciele() {
-    return string();
+vector<Nauczyciel *> Kurs::getNauczyciele() {
+    return nauczyciele;
 }
+
+vector<Student *> Kurs::getStudenci() {
+    return studenci;
+}
+
+
 

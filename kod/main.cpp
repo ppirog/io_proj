@@ -30,22 +30,26 @@ class System;
 
 int main() {
     System *system = new System("System");
-    Wydzial *wydzial = new Wydzial("Wydzial");
+    Wydzial *wydzial1 = new Wydzial("Matematyki");
+    Wydzial *wydzial2 = new Wydzial("Medyczny");
 
 
     Student *student = new Student("Jan", "Nowak", "user", "user");
     student->setIndeks(123456);
     system->dodajStudenta(student);
-    system->dodajDoZalogowanych("user", "user");
 
-    Nauczyciel *nauczyciel = new Nauczyciel("Jan", "Nowak", "admin", "admin");
-    system->dodajDoZalogowanych("admin", "admin");
-    wydzial->dodajNauczyciela(nauczyciel);
-    Kurs *kurs = new Kurs("Kurs", wydzial);
-    kurs->dodajNauczyciel(nauczyciel);
+    Nauczyciel *nauczyciel1 = new Nauczyciel("Jan", "Nowak", "admin", "admin");
+    nauczyciel1->dodajWydzial(wydzial1);
 
-    wydzial->dodajKurs(kurs);
-    system->dodajWydzial(wydzial);
+    Nauczyciel *nauczyciel2 = new Nauczyciel("Marek", "Rocki", "admin2", "admin2");
+    nauczyciel2->dodajWydzial(wydzial2);
+
+    wydzial1->dodajNauczyciela(nauczyciel1);
+    system->dodajWydzial(wydzial1);
+
+    wydzial2->dodajNauczyciela(nauczyciel2);
+    system->dodajWydzial(wydzial2);
+
 
     while (true) {
 
@@ -63,42 +67,149 @@ int main() {
             cout << "Podaj haslo: ";
             cin >> haslo;
             if (system->zaloguj(login, haslo)) {
+
                 if (system->czyJestStudentem(login, haslo)) {
-                    cout << "Zalogowano jako student" << endl;
+
+                    Student *student = nullptr;
+                    for (int i = 0; i < system->getStudenci().size(); i++) {
+                        if (system->getStudenci()[i]->getLogin() == login) {
+                            student = system->getStudenci()[i];
+                        }
+                    }
+
+                    cout << "Zalogowano jako student " << student->getImie() << " " << student->getNazwisko() << endl;
+
                     while (true) {
-                        cout << "1. Wyswietl kursy" << endl;
-                        cout << "2. Dolacz do kursu" << endl;
-                        cout << "3. Wyjdz z kursu" << endl;
-                        cout << "4. Wyloguj" << endl;
+                        cout << "1. Wyswietl zapisane kursy" << endl;
+                        cout << "2. Wybierz wydzial" << endl;
+                        cout << "3. Wyloguj" << endl;
+
                         int wybor;
                         cin >> wybor;
 
-                        if (wybor == 4) {
-                            system->wyloguj(login, haslo);
+                        if (wybor == 1) {
+                            for (auto &i: student->getDolaczoneKursy()) {
+                                cout << i->getNazwa() << endl;
+                            }
+                        } else if (wybor == 2) {
+                            cout << "Wybierz wydzial: " << endl;
+                            for (int i = 0; i < system->getWydzialy().size(); i++) {
+                                cout << i << ". " << system->getWydzialy()[i]->getNazwa() << endl;
+                            }
+                            int wybor;
+                            cin >> wybor;
+                            Wydzial *wydzial = system->getWydzialy()[wybor];
+
+                            if (wydzial != nullptr) {
+                                cout << "Wybrano wydzial " << wydzial->getNazwa() << endl;
+
+                                cout << "1. Zapisz sie na kurs" << endl;
+
+                                int wybor;
+                                cin >> wybor;
+                                if (wybor == 1) {
+                                    cout << "Wybierz kurs: " << endl;
+                                    for (int i = 0; i < wydzial->getKursy().size(); i++) {
+                                        cout << i << ". " << wydzial->getKursy()[i]->getNazwa() << endl;
+                                    }
+                                    int wybor;
+                                    cin >> wybor;
+                                    Kurs *kurs = wydzial->getKursy()[wybor];
+                                    student->dodajKurs(kurs);
+                                    kurs->dodajStudenta(student);
+                                }
+
+                            } else {
+                                cout << "Niepoprawne dane" << endl;
+                            }
+
+                        }
+                        else if(wybor == 3){
+                            break;
+                        }
+
+
+                    }
+
+
+                } else {
+                    Nauczyciel *nauczyciel = nullptr;
+                    for (int i = 0; i < system->getWydzialy().size(); i++) {
+                        for (int j = 0; j < system->getWydzialy()[i]->getNauczyciele().size(); j++) {
+                            if (system->getWydzialy()[i]->getNauczyciele()[j]->getLogin() == login) {
+                                nauczyciel = system->getWydzialy()[i]->getNauczyciele()[j];
+                            }
+                        }
+                    }
+
+                    cout << "Zalogowano jako nauczyciel " << nauczyciel->getImie() << " " << nauczyciel->getNazwisko()
+                         << endl;
+
+                    while (true) {
+                        cout << "1. Wyswietl kursy" << endl;
+                        cout << "2. Wybierz przypisany wydzial" << endl;
+                        cout << "3. Wyloguj" << endl;
+
+                        int wybor;
+                        cin >> wybor;
+
+                        if (wybor == 1) {
+                            for (auto &i: nauczyciel->getProwadzoneKursy()) {
+                                cout << i->getNazwa() << endl;
+                            }
+                        } else if (wybor == 2) {
+                            cout << "Wybierz wydzial: " << endl;
+
+                            for(int i = 0; i < nauczyciel->getWydzialy().size();i++){
+                                cout << nauczyciel->getWydzialy()[i]->getNazwa() << endl;
+                            }
+                            cout << "Podaj nazwe wydzialu: ";
+                            string nazwa;
+                            cin >> nazwa;
+
+                            Wydzial *wydzial = nullptr;
+
+                            for(int i = 0; i < nauczyciel->getWydzialy().size();i++){
+                                if(nauczyciel->getWydzialy()[i]->getNazwa() == nazwa){
+                                    wydzial = nauczyciel->getWydzialy()[i];
+                                }
+                            }
+
+                            if (wydzial != nullptr) {
+                                cout << "Wybrano wydzial " << wydzial->getNazwa() << endl;
+
+                                cout << "1. Dodaj kurs" << endl;
+
+                                int wybor;
+                                cin >> wybor;
+                                if (wybor == 1) {
+                                    cout << "Podaj nazwe kursu: ";
+                                    string nazwa;
+                                    cin >> nazwa;
+                                    Kurs *kurs = new Kurs(nazwa, wydzial);
+                                    kurs->dodajNauczyciel(nauczyciel);
+                                    nauczyciel->dodajKurs(kurs);
+                                    wydzial->dodajKurs(kurs);
+                                }
+
+                            } else {
+                                cout << "Niepoprawne dane" << endl;
+                            }
+
+                        }
+                        else if(wybor == 3){
                             break;
                         }
                     }
-                } else {
-                    cout << "Zalogowano jako nauczyciel" << endl;
-                    while (true) {
-                        cout << "1. Wyswietl kursy" << endl;
-                        cout << "2. Dodaj kurs" << endl;
-                        cout << "3. Usun kurs" << endl;
-                        cout << "4. Wyloguj" << endl;
-                        int wybor;
-                        cin >> wybor;
-
-                    }
                 }
+
+
             } else {
                 cout << "Niepoprawne dane" << endl;
             }
 
         }
 
-
     }
-
-
     return 0;
 }

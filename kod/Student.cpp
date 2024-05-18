@@ -10,6 +10,7 @@
 //
 
 
+#include <iostream>
 #include "Student.h"
 
 Student::Student(string imie, string nazwisko, string login, string haslo)
@@ -20,22 +21,39 @@ Student::Student(string imie, string nazwisko, string login, string haslo)
 
 void Student::dodajKurs(Kurs* kurs) {
 
+    for(int i = 0; i < this->dolaczoneKursy.size(); i++) {
+        if(this->dolaczoneKursy[i]->getNazwa() == kurs->getNazwa()) {
+            return;
+        }
+    }
+
+    this->dolaczoneKursy.push_back(kurs);
 }
 
 void Student::wyjdzZKursu(Kurs* kurs) {
-
+    for(int i = 0; i < this->dolaczoneKursy.size(); i++) {
+        if(this->dolaczoneKursy[i] == kurs) {
+            this->dolaczoneKursy.erase(this->dolaczoneKursy.begin() + i);
+        }
+    }
 }
 
 void Student::wyswietlKursy() {
-
+    for(int i = 0; i < this->dolaczoneKursy.size(); i++) {
+        cout << this->dolaczoneKursy[i]->getNazwa() << endl;
+    }
 }
 
 int Student::getIndeks() {
-    return 0;
+    return this->indeks;
 
 }
 
 void Student::setIndeks(int indeks) {
+    this->indeks = indeks;
+}
 
+vector<Kurs *> Student::getDolaczoneKursy() {
+    return this->dolaczoneKursy;
 }
 

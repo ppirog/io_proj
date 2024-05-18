@@ -43,7 +43,8 @@ public:
 	void ocenStudentow();
 	void setNazwa(string nazwa);
 	string getNazwa();
-	string getNauczyciele();
+    vector<Nauczyciel*> getNauczyciele();
+    vector<Student*> getStudenci();
 private:
 	string nazwa;
 	Wydzial* wydzial;

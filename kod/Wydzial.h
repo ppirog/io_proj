@@ -42,6 +42,7 @@ public:
 	void wyswietlKursy();
 	void usunKurs(Kurs* kurs);
     vector<Nauczyciel*> getNauczyciele();
+    vector<Kurs*> getKursy();
 
 private:
 	string nazwa;

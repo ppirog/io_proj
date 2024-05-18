@@ -44,6 +44,9 @@ public:
 	bool wyloguj(string login, string haslo);
     bool dodajDoZalogowanych(string login, string haslo);
     bool czyJestStudentem(string login, string haslo);
+    vector<Wydzial*> getWydzialy();
+    vector<Student *> getStudenci();
+
 private:
 	vector<Wydzial*> wydzialy;
 	map<string,string> zalogowani;

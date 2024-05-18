@@ -97,5 +97,13 @@ bool System::czyJestStudentem(string login, string haslo) {
     return false;
 }
 
+vector<Wydzial *> System::getWydzialy() {
+    return wydzialy;
+}
+
+vector<Student *> System::getStudenci() {
+    return studenci;
+}
+
 
 

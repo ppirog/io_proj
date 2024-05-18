@@ -37,6 +37,9 @@ public:
 	void wyswietlKursy();
 	int getIndeks();
 	void setIndeks(int indeks);
+
+    vector<Kurs *> getDolaczoneKursy();
+
 private:
 	vector<Kurs*> dolaczoneKursy;
 	int indeks;

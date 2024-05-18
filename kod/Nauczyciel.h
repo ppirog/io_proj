@@ -36,6 +36,10 @@ public:
 	void usunKurs(Kurs* kurs);
 	void dodajWydzial(Wydzial* wydzial);
 	void usunWydzial(Wydzial* wydzial);
+
+    vector<Wydzial *> getWydzialy();
+    vector<Kurs *> getProwadzoneKursy();
+
 private:
 	vector<Kurs*> prowadzoneKursy;
 	vector<Wydzial*> wydzialy;
