@@ -1,9 +1,9 @@
 //
-// Created by pawel on 19.05.2024.
+// Created by ola on 19.05.2024.
 //
 
-#ifndef IO_PROJ_SYSTEMTEST_H
-#define IO_PROJ_SYSTEMTEST_H
+#ifndef IO_PROJ_WYDZIALTEST_H
+#define IO_PROJ_WYDZIALTEST_H
 
 #include <string>
 #include <vector>
@@ -27,18 +27,16 @@ class Student;
 class Kurs;
 class System;
 
-class SystemTest {
+class WydzialTest {
 public:
     void runTests();
 private:
-    void testZalogujIWyloguj();
-    void testDodajWydzial();
-    void testUsunWydzial();
-    void testDodajStudenta();
-    void testUsunStudenta();
-    void testCzyJestStudentem();
-    void testGetWydzialy();
-    void testGetStudenci();
+    void testDodajNauczyciela();
+    void testUsunNauczyciela();
+    void testDodajKurs();
+    void testUsunKurs();
+    void testGetNazwa();
 };
 
-#endif //IO_PROJ_SYSTEMTEST_H
+
+#endif //IO_PROJ_WYDZIALTEST_H
