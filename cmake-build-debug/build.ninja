@@ -98,6 +98,13 @@ build CMakeFiles/io_proj.dir/kod/Wydzial.cpp.obj: CXX_COMPILER__io_proj_unscanne
   OBJECT_DIR = CMakeFiles\io_proj.dir
   OBJECT_FILE_DIR = CMakeFiles\io_proj.dir\kod
 
+build CMakeFiles/io_proj.dir/kod/testy/SystemTest.cpp.obj: CXX_COMPILER__io_proj_unscanned_Debug C$:/STUDIA/STUDIA_INF_2022-25/4_sem/IO/lab/lab8/io_proj/kod/testy/SystemTest.cpp || cmake_object_order_depends_target_io_proj
+  DEP_FILE = CMakeFiles\io_proj.dir\kod\testy\SystemTest.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/STUDIA/STUDIA_INF_2022-25/4_sem/IO/lab/lab8/io_proj/kod
+  OBJECT_DIR = CMakeFiles\io_proj.dir
+  OBJECT_FILE_DIR = CMakeFiles\io_proj.dir\kod\testy
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target io_proj
@@ -106,7 +113,7 @@ build CMakeFiles/io_proj.dir/kod/Wydzial.cpp.obj: CXX_COMPILER__io_proj_unscanne
 #############################################
 # Link the executable io_proj.exe
 
-build io_proj.exe: CXX_EXECUTABLE_LINKER__io_proj_Debug CMakeFiles/io_proj.dir/kod/main.cpp.obj CMakeFiles/io_proj.dir/kod/Kurs.cpp.obj CMakeFiles/io_proj.dir/kod/Nauczyciel.cpp.obj CMakeFiles/io_proj.dir/kod/Student.cpp.obj CMakeFiles/io_proj.dir/kod/System.cpp.obj CMakeFiles/io_proj.dir/kod/Uzytkownik.cpp.obj CMakeFiles/io_proj.dir/kod/Wydzial.cpp.obj
+build io_proj.exe: CXX_EXECUTABLE_LINKER__io_proj_Debug CMakeFiles/io_proj.dir/kod/main.cpp.obj CMakeFiles/io_proj.dir/kod/Kurs.cpp.obj CMakeFiles/io_proj.dir/kod/Nauczyciel.cpp.obj CMakeFiles/io_proj.dir/kod/Student.cpp.obj CMakeFiles/io_proj.dir/kod/System.cpp.obj CMakeFiles/io_proj.dir/kod/Uzytkownik.cpp.obj CMakeFiles/io_proj.dir/kod/Wydzial.cpp.obj CMakeFiles/io_proj.dir/kod/testy/SystemTest.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\io_proj.dir

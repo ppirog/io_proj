@@ -11,6 +11,8 @@
 #include "Student.h"
 #include "System.h"
 #include "Kurs.h"
+#include "testy/SystemTest.h"
+
 
 
 using namespace std;
@@ -27,8 +29,15 @@ class Kurs;
 
 class System;
 
+class SystemTest;
+
+
 
 int main() {
+    SystemTest *systemTest = new SystemTest();
+
+
+
     System *system = new System("System");
     Wydzial *wydzial1 = new Wydzial("Matematyki");
     Wydzial *wydzial2 = new Wydzial("Medyczny");
@@ -62,7 +71,7 @@ int main() {
         if (wybor == 1) {
             string login;
             string haslo;
-            cout << "Podaj login: ";
+            cout << "Podaj logowanie_i_wylogowanie: ";
             cin >> login;
             cout << "Podaj haslo: ";
             cin >> haslo;
