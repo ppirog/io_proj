@@ -82,6 +82,13 @@ int main() {
         int wybor;
         cin >> wybor;
 
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "Niepoprawne dane" << endl;
+            continue;
+        }
+
         if (wybor == 1) {
             string login;
             string haslo;
@@ -111,6 +118,13 @@ int main() {
                         int wybor;
                         cin >> wybor;
 
+                        if (std::cin.fail()) {
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');
+                            cout << "Niepoprawne dane" << endl;
+                            continue;
+                        }
+
                         if (wybor == 1) {
 
                             if (student->getDolaczoneKursy().size() == 0) {
@@ -135,7 +149,12 @@ int main() {
                             int wybor;
                             cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
                             cin >> wybor;
-
+                            if (std::cin.fail()) {
+                                std::cin.clear();
+                                std::cin.ignore(10000, '\n');
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
+                            }
                             if (wybor == -1) {
                                 continue;
                             } else if (wybor >= 0 && wybor < student->getDolaczoneKursy().size()) {
@@ -153,7 +172,12 @@ int main() {
 
                                     int wybor;
                                     cin >> wybor;
-
+                                    if (std::cin.fail()) {
+                                        std::cin.clear();
+                                        std::cin.ignore(10000, '\n');
+                                        cout << "Niepoprawne dane" << endl;
+                                        continue;
+                                    }
                                     if (wybor == 1) {
                                         kurs->wyswietlMaterialy();
                                     }else if(wybor == 2){
@@ -180,7 +204,12 @@ int main() {
                             }
                             int wybor;
                             cin >> wybor;
-
+                            if (std::cin.fail()) {
+                                std::cin.clear();
+                                std::cin.ignore(10000, '\n');
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
+                            }
                             if (wybor < 0 || wybor >= system->getWydzialy().size()) {
                                 cout << "Niepoprawne dane" << endl;
                                 continue;
@@ -195,6 +224,12 @@ int main() {
 
                                 int wybor;
                                 cin >> wybor;
+                                if (std::cin.fail()) {
+                                    std::cin.clear();
+                                    std::cin.ignore(10000, '\n');
+                                    cout << "Niepoprawne dane" << endl;
+                                    continue;
+                                }
                                 if (wybor == 1) {
                                     cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
                                     for (int i = 0; i < wydzial->getKursy().size(); i++) {
@@ -202,7 +237,12 @@ int main() {
                                     }
                                     int wybor;
                                     cin >> wybor;
-
+                                    if (std::cin.fail()) {
+                                        std::cin.clear();
+                                        std::cin.ignore(10000, '\n');
+                                        cout << "Niepoprawne dane" << endl;
+                                        continue;
+                                    }
                                     if (wybor == -1) {
                                         continue;
                                     }else if (wybor >= 0 && wybor < wydzial->getKursy().size()){
@@ -248,7 +288,12 @@ int main() {
 
                         int wybor;
                         cin >> wybor;
-
+                        if (std::cin.fail()) {
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');
+                            cout << "Niepoprawne dane" << endl;
+                            continue;
+                        }
                         if (wybor == 1) {
 
                             if (nauczyciel->getProwadzoneKursy().size() == 0) {
@@ -272,7 +317,12 @@ int main() {
                             int wybor;
                             cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
                             cin >> wybor;
-
+                            if (std::cin.fail()) {
+                                std::cin.clear();
+                                std::cin.ignore(10000, '\n');
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
+                            }
                             if (wybor == -1) {
                                 continue;
                             } else if (wybor >= 0 && wybor < nauczyciel->getProwadzoneKursy().size()){
@@ -292,7 +342,12 @@ int main() {
                                     cout << "7. Wyjdz z kursu" << endl;
                                     int wybor;
                                     cin >> wybor;
-
+                                    if (std::cin.fail()) {
+                                        std::cin.clear();
+                                        std::cin.ignore(10000, '\n');
+                                        cout << "Niepoprawne dane" << endl;
+                                        continue;
+                                    }
                                     if (wybor == 1) {
                                         cout << "Podaj tytul: ";
                                         string tytul;
@@ -356,6 +411,12 @@ int main() {
 
                                 int wybor;
                                 cin >> wybor;
+                                if (std::cin.fail()) {
+                                    std::cin.clear();
+                                    std::cin.ignore(10000, '\n');
+                                    cout << "Niepoprawne dane" << endl;
+                                    continue;
+                                }
                                 if (wybor == 1) {
                                     cout << "Podaj nazwe kursu: ";
                                     string nazwa;
