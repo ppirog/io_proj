@@ -76,8 +76,12 @@ int main() {
 
     while (true) {
 
-        cout << "1. Zaloguj" << endl;
-        cout << "2. Wyjdz z systemu" << endl;
+        cout << "=============== Witaj w systemie ===============" << endl;
+        cout << "|                                              |" << endl;
+        cout << "|            1. Zaloguj                        |" << endl;
+        cout << "|            2. Wyjdz z systemu                |" << endl;
+        cout << "|                                              |" << endl;
+        cout << "================================================" << endl;
 
         int wybor;
         cin >> wybor;
@@ -85,17 +89,23 @@ int main() {
         if (std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(10000, '\n');
-            cout << "Niepoprawne dane" << endl;
+            cout << "================= Blad systemu =================" << endl;
+            cout << "|                                              |" << endl;
+            cout << "|               Niepoprawne dane               |" << endl;
+            cout << "|                                              |" << endl;
+            cout << "================================================" << endl;
             continue;
         }
 
         if (wybor == 1) {
             string login;
             string haslo;
+            cout << "================== Logowanie ===================\n" << endl;
             cout << "Podaj login: ";
             getline(cin >> ws, login);
             cout << "Podaj haslo: ";
             getline(cin >> ws, haslo);
+            cout << "\n================================================" << endl;
             if (system->zaloguj(login, haslo)) {
 
                 if (system->czyJestStudentem(login, haslo)) {
@@ -107,13 +117,21 @@ int main() {
                         }
                     }
 
-                    cout << "Zalogowano jako student " << student->getImie() << " " << student->getNazwisko() << endl;
+                    cout << "=============== Panel Studenta =================" << endl;
+                    cout << "|                                              |" << endl;
+                    cout << "|      Zalogowano jako student " << student->getImie() << " " << student->getNazwisko() << "    |"<< endl;
+                    cout << "|                                              |" << endl;
+                    cout << "================================================" << endl;
 
                     while (true) {
-                        cout << "1. Wyswietl zapisane kursy" << endl;
-                        cout << "2. Wybierz kurs do ktorego jestes zapisany" << endl;
-                        cout << "3. Wybierz wydzial" << endl;
-                        cout << "4. Wyloguj" << endl;
+                        cout << "===================== Menu =====================" << endl;
+                        cout << "|                                              |" << endl;
+                        cout << "|  1. Wyswietl zapisane kursy                  |" << endl;
+                        cout << "|  2. Wybierz kurs do ktorego jestes zapisany  |" << endl;
+                        cout << "|  3. Wybierz wydzial                          |" << endl;
+                        cout << "|  4. Wyloguj                                  |" << endl;
+                        cout << "|                                              |" << endl;
+                        cout << "================================================" << endl;
 
                         int wybor;
                         cin >> wybor;
@@ -121,14 +139,22 @@ int main() {
                         if (std::cin.fail()) {
                             std::cin.clear();
                             std::cin.ignore(10000, '\n');
-                            cout << "Niepoprawne dane" << endl;
+                            cout << "================= Blad systemu =================" << endl;
+                            cout << "|                                              |" << endl;
+                            cout << "|               Niepoprawne dane               |" << endl;
+                            cout << "|                                              |" << endl;
+                            cout << "================================================" << endl;
                             continue;
                         }
 
                         if (wybor == 1) {
 
                             if (student->getDolaczoneKursy().size() == 0) {
-                                cout << "Nie jestes zapisany na zadne kursy" << endl;
+                                cout << "===================== Blad =====================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|      Nie jestes zapisany na zadne kursy      |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
 
@@ -137,14 +163,22 @@ int main() {
                             }
                         } else if (wybor == 2) {
                             if (student->getDolaczoneKursy().size() == 0) {
-                                cout << "Nie jestes zapisany na zadne kursy" << endl;
+                                cout << "===================== Blad =====================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|      Nie jestes zapisany na zadne kursy      |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
 
+                            cout << "============== Lista twoich kursow =============" << endl;
+                            cout << "|                                              |" << endl;
                             cout << "Lista twoich kursow: " << endl;
                             for (int i = 0; i < student->getDolaczoneKursy().size(); i++) {
                                 cout << i << ". " << student->getDolaczoneKursy()[i]->getNazwa() << endl;
                             }
+                            cout << "|                                              |" << endl;
+                            cout << "================================================" << endl;
 
                             int wybor;
                             cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
@@ -152,7 +186,11 @@ int main() {
                             if (std::cin.fail()) {
                                 std::cin.clear();
                                 std::cin.ignore(10000, '\n');
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
                             if (wybor == -1) {
@@ -175,7 +213,11 @@ int main() {
                                     if (std::cin.fail()) {
                                         std::cin.clear();
                                         std::cin.ignore(10000, '\n');
-                                        cout << "Niepoprawne dane" << endl;
+                                        cout << "================= Blad systemu =================" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "|               Niepoprawne dane               |" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "================================================" << endl;
                                         continue;
                                     }
                                     if (wybor == 1) {
@@ -194,7 +236,11 @@ int main() {
 
                                 }
                             }else{
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
                         } else if (wybor == 3) {
@@ -207,11 +253,19 @@ int main() {
                             if (std::cin.fail()) {
                                 std::cin.clear();
                                 std::cin.ignore(10000, '\n');
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
                             if (wybor < 0 || wybor >= system->getWydzialy().size()) {
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
 
@@ -227,7 +281,11 @@ int main() {
                                 if (std::cin.fail()) {
                                     std::cin.clear();
                                     std::cin.ignore(10000, '\n');
-                                    cout << "Niepoprawne dane" << endl;
+                                    cout << "================= Blad systemu =================" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "|               Niepoprawne dane               |" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "================================================" << endl;
                                     continue;
                                 }
                                 if (wybor == 1) {
@@ -240,7 +298,11 @@ int main() {
                                     if (std::cin.fail()) {
                                         std::cin.clear();
                                         std::cin.ignore(10000, '\n');
-                                        cout << "Niepoprawne dane" << endl;
+                                        cout << "================= Blad systemu =================" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "|               Niepoprawne dane               |" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "================================================" << endl;
                                         continue;
                                     }
                                     if (wybor == -1) {
@@ -250,13 +312,21 @@ int main() {
                                         student->dodajKurs(kurs);
                                         kurs->dodajStudenta(student);
                                     }else {
-                                        cout << "Niepoprawne dane" << endl;
+                                        cout << "================= Blad systemu =================" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "|               Niepoprawne dane               |" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "================================================" << endl;
                                         continue;
                                     }
                                 }
 
                             } else {
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                             }
 
                         } else if (wybor == 4) {
@@ -291,7 +361,11 @@ int main() {
                         if (std::cin.fail()) {
                             std::cin.clear();
                             std::cin.ignore(10000, '\n');
-                            cout << "Niepoprawne dane" << endl;
+                            cout << "================= Blad systemu =================" << endl;
+                            cout << "|                                              |" << endl;
+                            cout << "|               Niepoprawne dane               |" << endl;
+                            cout << "|                                              |" << endl;
+                            cout << "================================================" << endl;
                             continue;
                         }
                         if (wybor == 1) {
@@ -320,7 +394,11 @@ int main() {
                             if (std::cin.fail()) {
                                 std::cin.clear();
                                 std::cin.ignore(10000, '\n');
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
                             if (wybor == -1) {
@@ -345,7 +423,11 @@ int main() {
                                     if (std::cin.fail()) {
                                         std::cin.clear();
                                         std::cin.ignore(10000, '\n');
-                                        cout << "Niepoprawne dane" << endl;
+                                        cout << "================= Blad systemu =================" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "|               Niepoprawne dane               |" << endl;
+                                        cout << "|                                              |" << endl;
+                                        cout << "================================================" << endl;
                                         continue;
                                     }
                                     if (wybor == 1) {
@@ -382,7 +464,11 @@ int main() {
                                     }
                                 }
                             }else {
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
 
@@ -414,7 +500,11 @@ int main() {
                                 if (std::cin.fail()) {
                                     std::cin.clear();
                                     std::cin.ignore(10000, '\n');
-                                    cout << "Niepoprawne dane" << endl;
+                                    cout << "================= Blad systemu =================" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "|               Niepoprawne dane               |" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "================================================" << endl;
                                     continue;
                                 }
                                 if (wybor == 1) {
@@ -429,7 +519,11 @@ int main() {
                                 }
 
                             } else {
-                                cout << "Niepoprawne dane" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|               Niepoprawne dane               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                             }
 
                         } else if (wybor == 4) {
@@ -440,13 +534,21 @@ int main() {
 
 
             } else {
-                cout << "Niepoprawne dane" << endl;
+                cout << "================= Blad systemu =================" << endl;
+                cout << "|                                              |" << endl;
+                cout << "|               Niepoprawne dane               |" << endl;
+                cout << "|                                              |" << endl;
+                cout << "================================================" << endl;
             }
 
         }else if (wybor == 2) {
             break;
         }else {
-            cout << "Niepoprawny wybor" << endl;
+            cout << "================= Blad systemu =================" << endl;
+            cout << "|                                              |" << endl;
+            cout << "|               Niepoprawne dane               |" << endl;
+            cout << "|                                              |" << endl;
+            cout << "================================================" << endl;
         }
 
     }
