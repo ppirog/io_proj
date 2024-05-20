@@ -7795,7 +7795,7 @@
 <XPD:REF name="BehavioralFeature">BeX98fPlJESUFYB2qPEM/QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="KhjzWi8kRUeIDb5Nq7XcKAAA">
-<XPD:ATTR name="Name" type="string">login</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">logowanie_i_wylogowanie</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">BeX98fPlJESUFYB2qPEM/QAA</XPD:REF>
 </XPD:OBJ>
