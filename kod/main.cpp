@@ -124,7 +124,7 @@ int main() {
 
                             if (wybor == -1) {
                                 continue;
-                            } else {
+                            } else if (wybor >= 0 && wybor < student->getDolaczoneKursy().size()) {
 
                                 Kurs *kurs = student->getDolaczoneKursy()[wybor];
                                 cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
@@ -155,6 +155,9 @@ int main() {
                                     }
 
                                 }
+                            }else{
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
                             }
                         } else if (wybor == 3) {
                             cout << "Wybierz wydzial: " << endl;
@@ -163,6 +166,12 @@ int main() {
                             }
                             int wybor;
                             cin >> wybor;
+
+                            if (wybor < 0 || wybor >= system->getWydzialy().size()) {
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
+                            }
+
                             Wydzial *wydzial = system->getWydzialy()[wybor];
 
                             if (wydzial != nullptr) {
@@ -182,10 +191,14 @@ int main() {
 
                                     if (wybor == -1) {
                                         continue;
+                                    }else if (wybor >= 0 && wybor < wydzial->getKursy().size()){
+                                        Kurs *kurs = wydzial->getKursy()[wybor];
+                                        student->dodajKurs(kurs);
+                                        kurs->dodajStudenta(student);
+                                    }else {
+                                        cout << "Niepoprawne dane" << endl;
+                                        continue;
                                     }
-                                    Kurs *kurs = wydzial->getKursy()[wybor];
-                                    student->dodajKurs(kurs);
-                                    kurs->dodajStudenta(student);
                                 }
 
                             } else {
@@ -248,7 +261,7 @@ int main() {
 
                             if (wybor == -1) {
                                 continue;
-                            } else {
+                            } else if (wybor >= 0 && wybor < nauczyciel->getProwadzoneKursy().size()){
 
                                 Kurs *kurs = nauczyciel->getProwadzoneKursy()[wybor];
                                 cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
@@ -282,6 +295,12 @@ int main() {
                                         cin >> tytul;
                                         kurs->usunMaterial(tytul);
                                     } else if (wybor == 4) {
+
+                                        if (kurs->getStudenci().size() == 0) {
+                                            cout << "Brak studentow na kursie " + kurs->getNazwa() << endl;
+                                            continue;
+                                        }
+
                                         for (auto &i: kurs->getStudenci()) {
                                             cout << i->getImie() << " " << i->getNazwisko() << endl;
                                         }
@@ -293,6 +312,9 @@ int main() {
                                         break;
                                     }
                                 }
+                            }else {
+                                cout << "Niepoprawne dane" << endl;
+                                continue;
                             }
 
                         } else if (wybor == 3) {

@@ -84,6 +84,12 @@ void Kurs::usunMaterial(string tytul) {
 }
 
 void Kurs::ocenStudentow() {
+
+    if (this->studenci.size() == 0) {
+        cout << "Brak studentow na kursie " + this->nazwa << endl;
+        return;
+    }
+
     for(auto &i: this->studenci) {
         int ocena;
         cout << "Podaj ocene dla studenta " + i->getNazwisko() << endl;
@@ -110,10 +116,15 @@ vector<Student *> Kurs::getStudenci() {
 }
 
 void Kurs::wyswietlOcenyStudentow() {
+
+    if (this->oceny.size() == 0) {
+        cout << "Brak studentow na kursie " + this->nazwa << endl;
+        return;
+    }
     cout << "Oceny studentow:" << endl;
 
     for (auto &i: this->oceny) {
-        cout << i.first->getIndeks() << " " << i.first->getNazwisko() << " " << i.first->getImie() << i.second << endl;
+        cout << i.first->getIndeks() << " " << i.first->getNazwisko() << " " << i.first->getImie() << " " << i.second << endl;
     }
 
 };
