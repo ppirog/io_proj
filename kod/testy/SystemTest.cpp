@@ -29,7 +29,7 @@ void SystemTest::runTests() {
 }
 
 
-void SystemTest::ZalogujIWyloguj() {
+void SystemTest::testZalogujIWyloguj() {
         System *system = new System("System");
         Wydzial *wydzial1 = new Wydzial("Matematyki");
         Wydzial *wydzial2 = new Wydzial("Medyczny");
@@ -110,8 +110,10 @@ void SystemTest::testGetStudenci() {
     assert(system.getStudenci()[0]->getLogin() == "jank");
 }
 
-int main(){
-    SystemTest test;
-    test.logowanie_i_wylogowanie();
-    return 0;
+SystemTest::SystemTest() {
+    runTests();
+    cout << "System tests passed" << endl;
+
 }
+
+

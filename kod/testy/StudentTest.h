@@ -30,6 +30,7 @@ class System;
 class StudentTest {
 public:
     void runTests();
+    StudentTest();
 private:
     void testDodajKurs();
     void testGetISetIndeks();

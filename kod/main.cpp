@@ -12,6 +12,12 @@
 #include "System.h"
 #include "Kurs.h"
 #include "testy/SystemTest.h"
+#include "testy/KursTest.h"
+#include "testy/StudentTest.h"
+#include "testy/NauczycielTest.h"
+#include "testy/WydzialTest.h"
+#include "testy/UzytkownikTest.h"
+
 
 
 
@@ -29,13 +35,21 @@ class Kurs;
 
 class System;
 
+
 class SystemTest;
 
+class KursTest;
+
+class StudentTest;
+
+class NauczycielTest;
+
+class SystemTest;
+
+class WydzialTest;
 
 
 int main() {
-    SystemTest *systemTest = new SystemTest();
-
 
 
     System *system = new System("System");
@@ -374,5 +388,6 @@ int main() {
         }
 
     }
+
     return 0;
 }

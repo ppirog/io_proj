@@ -31,6 +31,7 @@ class System;
 class UzytkownikTest {
 public:
     void runTests();
+    UzytkownikTest();
 private:
     void testGetImie();
     void testGetNazwisko();

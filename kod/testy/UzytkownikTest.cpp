@@ -31,13 +31,13 @@ void UzytkownikTest::runTests() {
 void UzytkownikTest::testGetImie() {
     Uzytkownik uzytkownik("Jan", "Kowalski", "jkowalski", "haslo123");
     assert(uzytkownik.getImie() == "Jan");
-    assert(!uzytkownik.getImie() == "Janina");
+    assert(uzytkownik.getImie() != "Janina");
 }
 
 void UzytkownikTest::testGetNazwisko() {
     Uzytkownik uzytkownik("Jan", "Kowalski", "jkowalski", "haslo123");
     assert(uzytkownik.getNazwisko() == "Kowalski");
-    assert(!uzytkownik.getNazwisko() == "Nowak");
+    assert(uzytkownik.getNazwisko() != "Nowak");
 }
 
 void UzytkownikTest::testGetLogin() {
@@ -48,7 +48,7 @@ void UzytkownikTest::testGetLogin() {
 void UzytkownikTest::testGetHaslo() {
     Uzytkownik uzytkownik("Jan", "Kowalski", "jkowalski", "haslo123");
     assert(uzytkownik.getHaslo() == "haslo123");
-    assert(!uzytkownik.getHaslo() == "blabla");
+    assert(uzytkownik.getHaslo() != "blabla");
 }
 
 void UzytkownikTest::testSprawdzHaslo() {
@@ -81,10 +81,8 @@ void UzytkownikTest::testSetHaslo() {
     assert(uzytkownik.getHaslo() == "nowehaslo");
 }
 
+UzytkownikTest::UzytkownikTest() {
+    runTests();
+    cout << "Uzytkownik tests passed" << endl;
 
-int main() {
-    UzytkownikTest tests;
-    tests.runTests();
-    return 0;
 }
-

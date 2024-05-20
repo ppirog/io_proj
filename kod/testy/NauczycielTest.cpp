@@ -45,7 +45,7 @@ void NauczycielTest::testUsunKurs() {
     nauczyciel.dodajKurs(&kurs);
     nauczyciel.usunKurs(&kurs);
     assert(nauczyciel.getProwadzoneKursy().size() == 0);
-    assert(!nauczyciel.getProwadzoneKursy().size() == 2);
+    assert(nauczyciel.getProwadzoneKursy().size() != 2);
 }
 
 void NauczycielTest::testDodajWydzial() {
@@ -87,8 +87,7 @@ void NauczycielTest::testGetProwadzoneKursy() {
     assert(nauczyciel.getProwadzoneKursy()[1] == &kurs2);
 }
 
-int main() {
-    NauczycielTest tests;
-    tests.runTests();
-    return 0;
+NauczycielTest::NauczycielTest() {
+    runTests();
+    cout << "Nauczyciel tests passed" << endl;
 }

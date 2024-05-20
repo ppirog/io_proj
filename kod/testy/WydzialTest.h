@@ -30,6 +30,7 @@ class System;
 class WydzialTest {
 public:
     void runTests();
+    WydzialTest();
 private:
     void testDodajNauczyciela();
     void testUsunNauczyciela();

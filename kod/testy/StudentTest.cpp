@@ -38,7 +38,7 @@ void StudentTest::testGetISetIndeks() {
     Student student("Anna", "Nowak", "anowak", "haslo123");
     student.setIndeks(123456);
     assert(student.getIndeks() == 123456);
-    assert(!student.getIndeks() == 123123);
+    assert(student.getIndeks() != 123123);
 }
 
 
@@ -54,8 +54,7 @@ void StudentTest::testGetDolaczoneKursy() {
     assert(student.getDolaczoneKursy()[1] == &kurs2);
 }
 
-int main() {
-    StudentTest tests;
-    tests.runTests();
-    return 0;
+StudentTest::StudentTest() {
+    runTests();
+    cout << "Student tests passed" << endl;
 }

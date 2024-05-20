@@ -30,6 +30,7 @@ class System;
 class SystemTest {
 public:
     void runTests();
+    SystemTest();
 private:
     void testZalogujIWyloguj();
     void testDodajWydzial();

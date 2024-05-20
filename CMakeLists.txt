@@ -21,4 +21,13 @@ add_executable(io_proj
         kod/Kurs.h
         kod/Student.cpp
         kod/Student.h
+        kod/testy/KursTest.cpp
+        kod/testy/KursTest.h
+        kod/testy/NauczycielTest.cpp
+        kod/testy/NauczycielTest.h
+        kod/testy/StudentTest.cpp
+        kod/testy/SystemTest.cpp
+        kod/testy/UzytkownikTest.cpp
+        kod/testy/WydzialTest.cpp
+        kod/testy/UzytkownikTest.cpp
 )
