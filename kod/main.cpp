@@ -71,7 +71,7 @@ int main() {
         if (wybor == 1) {
             string login;
             string haslo;
-            cout << "Podaj logowanie_i_wylogowanie: ";
+            cout << "Podaj login: ";
             cin >> login;
             cout << "Podaj haslo: ";
             cin >> haslo;
