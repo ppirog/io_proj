@@ -19,9 +19,7 @@ using namespace std;
 
 void KursTest::runTests() {
     testDodajNauczyciel();
-    testDodajMaterialy();
     testDodajStudenta();
-    testUsunMaterial();
     testSetIGetNazwa();
     testGetNauczyciele();
     testGetStudenci();
@@ -37,15 +35,6 @@ void KursTest::testDodajNauczyciel() {
     assert(kurs.getNauczyciele()[0] == &nauczyciel);
 }
 
-void KursTest::testDodajMaterialy() {
-//    Wydzial wydzial("Informatyka");
-//    Kurs kurs("Programowanie", &wydzial);
-//    kurs.dodajMaterialy("Wstep", "Podstawy programowania");
-//    assert(kurs.getMaterialy().size() == 1);
-//    assert(kurs.getMaterialy().count("Wstep") == 1);
-//    assert(kurs.getMaterialy()["Wstep"] == "Podstawy programowania");
-}
-
 void KursTest::testDodajStudenta() {
     Wydzial wydzial("Informatyka");
     Kurs kurs("Programowanie", &wydzial);
@@ -56,22 +45,12 @@ void KursTest::testDodajStudenta() {
 }
 
 
-void KursTest::testUsunMaterial() {
-//    Wydzial wydzial("Informatyka");
-//    Kurs kurs("Programowanie", &wydzial);
-//    kurs.dodajMaterialy("Wstep", "Podstawy programowania");
-//    kurs.usunMaterial("Wstep");
-//    assert(kurs.getMaterialy().size() == 0);
-//    assert(!kurs.getMaterialy().size() == 5);
-}
-
-
 void KursTest::testSetIGetNazwa() {
-//    Wydzial wydzial("Informatyka");
-//    Kurs kurs("Programowanie", &wydzial);
-//    kurs.setNazwa("Zaawansowane Programowanie");
-//    assert(kurs.getNazwa() == "Zaawansowane Programowanie");
-//    assert(!kurs.getNazwa() == "Zaawansowane");
+    Wydzial wydzial("Informatyka");
+    Kurs kurs("Programowanie", &wydzial);
+    kurs.setNazwa("Zaawansowane Programowanie");
+    assert(kurs.getNazwa() == "Zaawansowane Programowanie");
+    assert(kurs.getNazwa() != "Zaawansowane");
 }
 
 

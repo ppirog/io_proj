@@ -33,9 +33,7 @@ public:
     KursTest();
 private:
     void testDodajNauczyciel();
-    void testDodajMaterialy();
     void testDodajStudenta();
-    void testUsunMaterial();
     void testSetIGetNazwa();
     void testGetNauczyciele();
     void testGetStudenci();
