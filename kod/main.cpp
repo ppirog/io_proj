@@ -54,7 +54,7 @@ int main() {
     while (true) {
 
         cout << "1. Zaloguj" << endl;
-        cout << "2. Wyloguj" << endl;
+        cout << "2. Wyjdz z systemu" << endl;
 
         int wybor;
         cin >> wybor;
@@ -89,6 +89,12 @@ int main() {
                         cin >> wybor;
 
                         if (wybor == 1) {
+
+                            if (student->getDolaczoneKursy().size() == 0) {
+                                cout << "Nie jestes zapisany na zadne kursy" << endl;
+                                continue;
+                            }
+
                             for (auto &i: student->getDolaczoneKursy()) {
                                 cout << i->getNazwa() << endl;
                             }
@@ -208,6 +214,12 @@ int main() {
                         cin >> wybor;
 
                         if (wybor == 1) {
+
+                            if (nauczyciel->getProwadzoneKursy().size() == 0) {
+                                cout << "Nie masz zadnych kursow" << endl;
+                                continue;
+                            }
+
                             for (auto &i: nauczyciel->getProwadzoneKursy()) {
                                 cout << i->getNazwa() << endl;
                             }
@@ -324,6 +336,10 @@ int main() {
                 cout << "Niepoprawne dane" << endl;
             }
 
+        }else if (wybor == 2) {
+            break;
+        }else {
+            cout << "Niepoprawny wybor" << endl;
         }
 
     }
