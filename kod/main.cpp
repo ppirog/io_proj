@@ -53,7 +53,7 @@ int main() {
 
 
     System *system = new System("System");
-    Wydzial *wydzial1 = new Wydzial("Matematyki");
+    Wydzial *wydzial1 = new Wydzial("Pielegniarstwa");
     Wydzial *wydzial2 = new Wydzial("Medyczny");
 
 
@@ -93,9 +93,9 @@ int main() {
             string login;
             string haslo;
             cout << "Podaj login: ";
-            cin >> login;
+            getline(cin >> ws, login);
             cout << "Podaj haslo: ";
-            cin >> haslo;
+            getline(cin >> ws, haslo);
             if (system->zaloguj(login, haslo)) {
 
                 if (system->czyJestStudentem(login, haslo)) {
@@ -351,17 +351,17 @@ int main() {
                                     if (wybor == 1) {
                                         cout << "Podaj tytul: ";
                                         string tytul;
-                                        cin >> tytul;
+                                        getline(cin >> ws, tytul);
                                         cout << "Podaj tresc: ";
                                         string tresc;
-                                        cin >> tresc;
+                                        getline(cin >> ws, tresc);
                                         kurs->dodajMaterialy(tytul, tresc);
                                     } else if (wybor == 2) {
                                         kurs->wyswietlMaterialy();
                                     } else if (wybor == 3) {
                                         cout << "Podaj tytul: ";
                                         string tytul;
-                                        cin >> tytul;
+                                        getline(cin >> ws, tytul);
                                         kurs->usunMaterial(tytul);
                                     } else if (wybor == 4) {
 
@@ -394,7 +394,7 @@ int main() {
                             }
                             cout << "Podaj nazwe wydzialu: ";
                             string nazwa;
-                            cin >> nazwa;
+                            getline(cin >> ws, nazwa);
 
                             Wydzial *wydzial = nullptr;
 
@@ -420,7 +420,8 @@ int main() {
                                 if (wybor == 1) {
                                     cout << "Podaj nazwe kursu: ";
                                     string nazwa;
-                                    cin >> nazwa;
+
+                                    getline(cin >> ws, nazwa);
                                     Kurs *kurs = new Kurs(nazwa, wydzial);
                                     kurs->dodajNauczyciel(nauczyciel);
                                     nauczyciel->dodajKurs(kurs);
