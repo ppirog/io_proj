@@ -118,9 +118,9 @@ int main() {
                     }
 
                     cout << "=============== Panel Studenta =================" << endl;
-                    cout << "|                                              |" << endl;
-                    cout << "|      Zalogowano jako student " << student->getImie() << " " << student->getNazwisko() << "    |"<< endl;
-                    cout << "|                                              |" << endl;
+                    cout << " " << endl;
+                    cout << "       " << "Zalogowano jako student " << student->getImie() << " " << student->getNazwisko() << endl;
+                    cout << " " << endl;
                     cout << "================================================" << endl;
 
                     while (true) {
@@ -158,9 +158,14 @@ int main() {
                                 continue;
                             }
 
+                            cout << "============== Lista twoich kursow =============" << endl;
+                            cout << " " << endl;
                             for (auto &i: student->getDolaczoneKursy()) {
-                                cout << i->getNazwa() << endl;
+                                cout << "       " <<  i->getNazwa() << endl;
                             }
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
+
                         } else if (wybor == 2) {
                             if (student->getDolaczoneKursy().size() == 0) {
                                 cout << "===================== Blad =====================" << endl;
@@ -172,16 +177,17 @@ int main() {
                             }
 
                             cout << "============== Lista twoich kursow =============" << endl;
-                            cout << "|                                              |" << endl;
-                            cout << "Lista twoich kursow: " << endl;
+                            cout << " " << endl;
+                            cout << "    Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                            cout << " " << endl;
                             for (int i = 0; i < student->getDolaczoneKursy().size(); i++) {
-                                cout << i << ". " << student->getDolaczoneKursy()[i]->getNazwa() << endl;
+                                cout << "       "<< i << ". " << student->getDolaczoneKursy()[i]->getNazwa() << endl;
                             }
-                            cout << "|                                              |" << endl;
+                            cout << " " << endl;
                             cout << "================================================" << endl;
 
                             int wybor;
-                            cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+
                             cin >> wybor;
                             if (std::cin.fail()) {
                                 std::cin.clear();
@@ -198,15 +204,24 @@ int main() {
                             } else if (wybor >= 0 && wybor < student->getDolaczoneKursy().size()) {
 
                                 Kurs *kurs = student->getDolaczoneKursy()[wybor];
-                                cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
+
+                                cout << "================= Wybrany kurs =================" << endl;
+                                cout << " " << endl;
+                                cout <<  "       "<< kurs->getNazwa() << endl;
+                                cout << " " << endl;
+                                cout << "================================================" << endl;
 
                                 while (true) {
 
-                                    cout << "1. Wyswietl materialy" << endl;
-                                    cout << "2. Pobierz material" << endl;
-                                    cout << "3. Pokaz ocene" << endl;
-                                    cout << "4. Wyswietl prowadzacych" << endl;
-                                    cout << "5. Wyjdz z kursu" << endl;
+                                    cout << "===================== Menu =====================" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "|     1. Wyswietl materialy                    |" << endl;
+                                    cout << "|     2. Pobierz material                      |" << endl;
+                                    cout << "|     3. Pokaz ocene                           |" << endl;
+                                    cout << "|     4. Wyswietl prowadzacych                 |" << endl;
+                                    cout << "|     5. Wyjdz z kursu                         |" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "================================================" << endl;
 
                                     int wybor;
                                     cin >> wybor;
@@ -227,9 +242,13 @@ int main() {
                                     }else if (wybor == 3) {
                                         kurs->wyswietlOcene(student);
                                     } else if (wybor == 4) {
+                                        cout << "================== Prowadzacy ==================" << endl;
+                                        cout << " " << endl;
                                         for (auto &i: kurs->getNauczyciele()) {
-                                            cout << i->getImie() << " " << i->getNazwisko() << endl;
+                                            cout << "       " << i->getImie() << " " << i->getNazwisko() << endl;
                                         }
+                                        cout << " " << endl;
+                                        cout << "================================================" << endl;
                                     } else {
                                         break;
                                     }
@@ -244,10 +263,13 @@ int main() {
                                 continue;
                             }
                         } else if (wybor == 3) {
-                            cout << "Wybierz wydzial: " << endl;
+                            cout << "================ Wybierz wydzial ===============" << endl;
+                            cout << " " << endl;
                             for (int i = 0; i < system->getWydzialy().size(); i++) {
-                                cout << i << ". " << system->getWydzialy()[i]->getNazwa() << endl;
+                                cout << "       " <<  i << ". " << system->getWydzialy()[i]->getNazwa() << endl;
                             }
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
                             int wybor;
                             cin >> wybor;
                             if (std::cin.fail()) {
@@ -272,9 +294,17 @@ int main() {
                             Wydzial *wydzial = system->getWydzialy()[wybor];
 
                             if (wydzial != nullptr) {
-                                cout << "Wybrano wydzial " << wydzial->getNazwa() << endl;
+                                cout << "================ Wybrano wydzial ===============" << endl;
+                                cout << " " << endl;
+                                cout << "       " <<  wydzial->getNazwa() << endl;
+                                cout << " " << endl;
+                                cout << "================================================" << endl;
 
-                                cout << "1. Zapisz sie na kurs" << endl;
+                                cout << "===================== Menu =====================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|     1. Zapisz sie na kurs                    |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
 
                                 int wybor;
                                 cin >> wybor;
@@ -289,10 +319,15 @@ int main() {
                                     continue;
                                 }
                                 if (wybor == 1) {
-                                    cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                                    cout << "================= Wybierz Kurs =================" << endl;
+                                    cout << " " << endl;
+                                    cout << "    Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                                    cout << " " << endl;
                                     for (int i = 0; i < wydzial->getKursy().size(); i++) {
-                                        cout << i << ". " << wydzial->getKursy()[i]->getNazwa() << endl;
+                                        cout << "       " << i << ". " << wydzial->getKursy()[i]->getNazwa() << endl;
                                     }
+                                    cout << " " << endl;
+                                    cout << "================================================" << endl;
                                     int wybor;
                                     cin >> wybor;
                                     if (std::cin.fail()) {
@@ -330,6 +365,9 @@ int main() {
                             }
 
                         } else if (wybor == 4) {
+                            cout << "================================================" << endl;
+                            cout << "|              Poprawnie wylogowano            |" << endl;
+                            cout << "================================================" << endl;
                             break;
                         }
 
@@ -347,14 +385,22 @@ int main() {
                         }
                     }
 
-                    cout << "Zalogowano jako nauczyciel " << nauczyciel->getImie() << " " << nauczyciel->getNazwisko()
-                         << endl;
+                    cout << "============== Panel Nauczyciela ===============" << endl;
+                    cout << " " << endl;
+                    cout << "       " << "Zalogowano jako nauczyciel " << nauczyciel->getImie() << " " << nauczyciel->getNazwisko()<< endl;
+                    cout << " " << endl;
+                    cout << "================================================" << endl;
 
                     while (true) {
-                        cout << "1. Wyswietl kursy" << endl;
-                        cout << "2. Wybierz utworzony kurs" << endl;
-                        cout << "3. Wybierz przypisany wydzial" << endl;
-                        cout << "4. Wyloguj" << endl;
+
+                        cout << "===================== Menu =====================" << endl;
+                        cout << "|                                              |" << endl;
+                        cout << "|  1. Wyswietl kursy                           |" << endl;
+                        cout << "|  2. Wybierz utworzony kurs                   |" << endl;
+                        cout << "|  3. Wybierz przypisany wydzial               |" << endl;
+                        cout << "|  4. Wyloguj                                  |" << endl;
+                        cout << "|                                              |" << endl;
+                        cout << "================================================" << endl;
 
                         int wybor;
                         cin >> wybor;
@@ -371,25 +417,46 @@ int main() {
                         if (wybor == 1) {
 
                             if (nauczyciel->getProwadzoneKursy().size() == 0) {
-                                cout << "Nie masz zadnych kursow" << endl;
+
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|           Nie masz zadnych kursow            |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
 
+                            cout << "=============== Prowadzone kursy ===============" << endl;
+                            cout << " " << endl;
                             for (auto &i: nauczyciel->getProwadzoneKursy()) {
-                                cout << i->getNazwa() << endl;
+                                cout << "       " << i->getNazwa() << endl;
                             }
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
+
                         } else if (wybor == 2) {
 
                             if (nauczyciel->getProwadzoneKursy().size() == 0) {
-                                cout << "Nie masz zadnych kursow" << endl;
+                                cout << "================= Blad systemu =================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|           Nie masz zadnych kursow            |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
                                 continue;
                             }
-                            cout << "Lista twoich kursow: " << endl;
+
+                            cout << "============== Lista twoich kursow =============" << endl;
+                            cout << " " << endl;
+                            cout << "    Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+                            cout << " " << endl;
                             for (int i = 0; i < nauczyciel->getProwadzoneKursy().size(); i++) {
-                                cout << i << ". " << nauczyciel->getProwadzoneKursy()[i]->getNazwa() << endl;
+                                cout << "       " << i << ". " << nauczyciel->getProwadzoneKursy()[i]->getNazwa() << endl;
                             }
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
+
                             int wybor;
-                            cout << "Wybierz kurs: Jak nie chcesz zadnego to -1" << endl;
+
                             cin >> wybor;
                             if (std::cin.fail()) {
                                 std::cin.clear();
@@ -406,18 +473,29 @@ int main() {
                             } else if (wybor >= 0 && wybor < nauczyciel->getProwadzoneKursy().size()){
 
                                 Kurs *kurs = nauczyciel->getProwadzoneKursy()[wybor];
-                                cout << "Wybrany kurs: " << kurs->getNazwa() << endl;
+
+
+                                cout << "================= Wybrany kurs =================" << endl;
+                                cout << " " << endl;
+                                cout <<  "       "<< kurs->getNazwa() << endl;
+                                cout << " " << endl;
+                                cout << "================================================" << endl;
 
                                 while (true) {
 
 
-                                    cout << "1. Dodaj material" << endl;
-                                    cout << "2. Wyswietl materialy" << endl;
-                                    cout << "3. Usun material" << endl;
-                                    cout << "4. Wyswietl studentow" << endl;
-                                    cout << "5. Ocen studentow" << endl;
-                                    cout << "6. Wyswietl oceny studentow" << endl;
-                                    cout << "7. Wyjdz z kursu" << endl;
+                                    cout << "===================== Menu =====================" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "|  1. Dodaj material                           |" << endl;
+                                    cout << "|  2. Wyswietl materialy                       |" << endl;
+                                    cout << "|  3. Usun material                            |" << endl;
+                                    cout << "|  4. Wyswietl studentow                       |" << endl;
+                                    cout << "|  5. Ocen studentow                           |" << endl;
+                                    cout << "|  6. Wyswietl oceny studentow                 |" << endl;
+                                    cout << "|  7. Wyjdz z kursu                            |" << endl;
+                                    cout << "|                                              |" << endl;
+                                    cout << "================================================" << endl;
+
                                     int wybor;
                                     cin >> wybor;
                                     if (std::cin.fail()) {
@@ -431,30 +509,51 @@ int main() {
                                         continue;
                                     }
                                     if (wybor == 1) {
-                                        cout << "Podaj tytul: ";
+
+                                        cout << "================ Dodaj material ================" << endl;
+                                        cout << " " << endl;
+                                        cout << "       " << "Podaj tytul: ";
                                         string tytul;
                                         getline(cin >> ws, tytul);
-                                        cout << "Podaj tresc: ";
+                                        cout << "       " << "Podaj tresc: ";
                                         string tresc;
                                         getline(cin >> ws, tresc);
                                         kurs->dodajMaterialy(tytul, tresc);
+                                        cout << " " << endl;
+                                        cout << "================================================" << endl;
+
                                     } else if (wybor == 2) {
                                         kurs->wyswietlMaterialy();
                                     } else if (wybor == 3) {
-                                        cout << "Podaj tytul: ";
+
+                                        cout << "================ Usun material =================" << endl;
+                                        cout << " " << endl;
+                                        cout << "       " << "Podaj tytul: ";
                                         string tytul;
                                         getline(cin >> ws, tytul);
                                         kurs->usunMaterial(tytul);
+                                        cout << " " << endl;
+                                        cout << "================================================" << endl;
                                     } else if (wybor == 4) {
 
                                         if (kurs->getStudenci().size() == 0) {
-                                            cout << "Brak studentow na kursie " + kurs->getNazwa() << endl;
+
+                                            cout << "================= Blad systemu =================" << endl;
+                                            cout << " " << endl;
+                                            cout << "       " << "Brak studentow na kursie " + kurs->getNazwa() << endl;
+                                            cout << " " << endl;
+                                            cout << "================================================" << endl;
                                             continue;
                                         }
 
+                                        cout << "=================== Studenci ===================" << endl;
+                                        cout << " " << endl;
                                         for (auto &i: kurs->getStudenci()) {
                                             cout << i->getImie() << " " << i->getNazwisko() << endl;
                                         }
+                                        cout << " " << endl;
+                                        cout << "================================================" << endl;
+
                                     } else if (wybor == 5) {
                                         kurs->ocenStudentow();
                                     } else if (wybor == 6) {
@@ -473,14 +572,23 @@ int main() {
                             }
 
                         } else if (wybor == 3) {
-                            cout << "Wybierz wydzial: " << endl;
 
+                            cout << "================ Wybierz wydzial ===============" << endl;
+                            cout << " " << endl;
                             for (int i = 0; i < nauczyciel->getWydzialy().size(); i++) {
                                 cout << nauczyciel->getWydzialy()[i]->getNazwa() << endl;
                             }
-                            cout << "Podaj nazwe wydzialu: ";
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
+
+                            cout << "================================================" << endl;
+                            cout << " " << endl;
+                            cout << "       " << "Podaj nazwe wydzialu: ";
+
                             string nazwa;
                             getline(cin >> ws, nazwa);
+                            cout << " " << endl;
+                            cout << "================================================" << endl;
 
                             Wydzial *wydzial = nullptr;
 
@@ -491,9 +599,17 @@ int main() {
                             }
 
                             if (wydzial != nullptr) {
-                                cout << "Wybrano wydzial " << wydzial->getNazwa() << endl;
+                                cout << "================ Wybrano wydzial ===============" << endl;
+                                cout << " " << endl;
+                                cout << "       " <<  wydzial->getNazwa() << endl;
+                                cout << " " << endl;
+                                cout << "================================================" << endl;
 
-                                cout << "1. Dodaj kurs" << endl;
+                                cout << "===================== Menu =====================" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "|  1. Dodaj kurs                               |" << endl;
+                                cout << "|                                              |" << endl;
+                                cout << "================================================" << endl;
 
                                 int wybor;
                                 cin >> wybor;
@@ -508,14 +624,20 @@ int main() {
                                     continue;
                                 }
                                 if (wybor == 1) {
-                                    cout << "Podaj nazwe kursu: ";
+
+                                    cout << "================ Tworzenie kursu ===============" << endl;
+                                    cout << " " << endl;
+                                    cout << "       " << "Podaj nazwe kursu: ";
                                     string nazwa;
 
                                     getline(cin >> ws, nazwa);
+                                    cout << " " << endl;
+                                    cout << "================================================" << endl;
                                     Kurs *kurs = new Kurs(nazwa, wydzial);
                                     kurs->dodajNauczyciel(nauczyciel);
                                     nauczyciel->dodajKurs(kurs);
                                     wydzial->dodajKurs(kurs);
+
                                 }
 
                             } else {
@@ -527,6 +649,9 @@ int main() {
                             }
 
                         } else if (wybor == 4) {
+                            cout << "================================================" << endl;
+                            cout << "|              Poprawnie wylogowano            |" << endl;
+                            cout << "================================================" << endl;
                             break;
                         }
                     }

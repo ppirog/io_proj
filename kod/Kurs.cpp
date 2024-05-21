@@ -25,58 +25,89 @@ void Kurs::dodajNauczyciel(Nauczyciel * nauczyciel) {
 
 void Kurs::dodajMaterialy(string tytul, string zawartosc) {
     this->materialy.insert(pair<string, string>(tytul, zawartosc));
-    cout << "Dodano material" << endl;
+    cout << "================================================" << endl;
+    cout << "|               Dodano material                |" << endl;
+    cout << "================================================" << endl;
 }
 
 void Kurs::dodajStudenta(Student* student) {
 
     for(auto &i: this->studenci) {
         if(i->getLogin() == student->getLogin()) {
-            cout << "Student jest juz zapisany na kurs" << endl;
+            cout << "================================================" << endl;
+            cout << "|       Student jest juz zapisany na kurs      |" << endl;
+            cout << "================================================" << endl;
             return;
         }
     }
-    cout << "Zapisano na kurs studenta " + student->getNazwisko() << endl;
+    cout << "================================================" << endl;
+    cout << "    Zapisano na kurs studenta " + student->getNazwisko() << endl;
+    cout << "================================================" << endl;
     this->studenci.push_back(student);
 }
 
 void Kurs::wyswietlMaterialy() {
 
     if (materialy.size() == 0) {
-        cout << "Brak materialow na kursie " + this->nazwa << endl;
+        cout << "================= Blad systemu =================" << endl;
+        cout << " " << endl;
+        cout << "       " << "Brak materialow na kursie " + this->nazwa << endl;
+        cout << " " << endl;
+        cout << "================================================" << endl;
         return;
     }
 
+    cout << "================== Materialy ===================" << endl;
+    cout << " " << endl;
     for(auto &i: this->materialy) {
         cout << "Tytul: " << i.first << " Tresc: " << i.second << endl;
     }
+    cout << " " << endl;
+    cout << "================================================" << endl;
 }
 
 void Kurs::pobierzMaterialy() {
     if (materialy.size() == 0) {
-        cout << "Brak materialow na kursie " + this->nazwa << endl;
+
+        cout << "================= Blad systemu =================" << endl;
+        cout << " " << endl;
+        cout << "       " << "Brak materialow na kursie " + this->nazwa << endl;
+        cout << " " << endl;
+        cout << "================================================" << endl;
         return;
     }
 
     int index = 0;
+    cout << "================== Materialy ===================" << endl;
+    cout << " " << endl;
     for(auto &i: this->materialy) {
         cout <<  index << ". "<< "Tytul: " << i.first << " Tresc: " << i.second << endl;
         index++;
     }
+    cout << " " << endl;
+    cout << "================================================" << endl;
 
     int wybor;
-    cout << "Wybierz material do pobrania" << endl;
+    cout << "================================================" << endl;
+    cout << "|          Wybierz material do pobrania        |" << endl;
+    cout << "================================================" << endl;
     cin >> wybor;
 
     if(wybor < 0 || wybor >= materialy.size()) {
-        cout << "Nie ma takiego materialu" << endl;
+        cout << "================================================" << endl;
+        cout << "|            Nie ma takiego materialu          |" << endl;
+        cout << "================================================" << endl;
         return;
     }
 
-    cout << "Pomyslnie pobrano material:" << endl;
+    cout << "================================================" << endl;
+    cout << "|          Pomyslnie pobrano material          |" << endl;
+    cout << "================================================" << endl;
+
     auto it = materialy.begin();
     advance(it, wybor);
-    cout << "Tytul: " << it->first << " Tresc: " << it->second << endl;
+    cout << "   Tytul: " << it->first << " Tresc: " << it->second << endl;
+    cout << "================================================" << endl;
 }
 
 void Kurs::usunMaterial(string tytul) {
@@ -86,16 +117,24 @@ void Kurs::usunMaterial(string tytul) {
 void Kurs::ocenStudentow() {
 
     if (this->studenci.size() == 0) {
-        cout << "Brak studentow na kursie " + this->nazwa << endl;
+        cout << "================= Blad systemu =================" << endl;
+        cout << " " << endl;
+        cout << "     Brak studentow na kursie " + this->nazwa << endl;
+        cout << " " << endl;
+        cout << "================================================" << endl;
         return;
     }
 
+    cout << "================= Wstaw oceny ==================" << endl;
+    cout << " " << endl;
     for(auto &i: this->studenci) {
         int ocena;
-        cout << "Podaj ocene dla studenta " + i->getNazwisko() << endl;
+        cout << "   Podaj ocene dla studenta " + i->getNazwisko() << endl;
         cin >> ocena;
         oceny[i] = ocena;
     }
+    cout << " " << endl;
+    cout << "================================================" << endl;
 }
 
 void Kurs::setNazwa(string nazwa) {
@@ -118,18 +157,28 @@ vector<Student *> Kurs::getStudenci() {
 void Kurs::wyswietlOcenyStudentow() {
 
     if (this->oceny.size() == 0) {
-        cout << "Brak studentow na kursie " + this->nazwa << endl;
+        cout << "================= Blad systemu =================" << endl;
+        cout << " " << endl;
+        cout << "     Brak studentow na kursie " + this->nazwa << endl;
+        cout << " " << endl;
+        cout << "================================================" << endl;
         return;
     }
-    cout << "Oceny studentow:" << endl;
+
+    cout << "================ Oceny studentow ===============" << endl;
+    cout << " " << endl;
 
     for (auto &i: this->oceny) {
-        cout << i.first->getIndeks() << " " << i.first->getNazwisko() << " " << i.first->getImie() << " " << i.second << endl;
+        cout << "    " << i.first->getIndeks() << " " << i.first->getNazwisko() << " " << i.first->getImie() << " " << i.second << endl;
     }
+    cout << " " << endl;
+    cout << "================================================" << endl;
 
 };
 void Kurs::wyswietlOcene(Student* student){
-    cout << "Twoja ocena: " << this->oceny[student] << endl;
+    cout << "================ Ocena studenta ================" << endl;
+    cout << "   Twoja ocena: " << this->oceny[student] << endl;
+    cout << "================================================" << endl;
 };
 
 

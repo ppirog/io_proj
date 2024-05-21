@@ -43,24 +43,34 @@ void Wydzial::dodajKurs(Kurs* kurs) {
 
     for(auto &i: this->kursy) {
         if(i->getNazwa() == kurs->getNazwa()) {
-            cout << "Kurs o podanej nazwie juz istnieje" << endl;
+            cout << "================================================" << endl;
+            cout << "|    Kurs o podanej nazwie juz istnieje        |"<< endl;
+            cout << "================================================" << endl;
             return;
         }
     }
-    cout << "Dodano kurs " + kurs->getNazwa() << endl;
+    cout << "================================================" << endl;
+    cout << "    Dodano kurs " + kurs->getNazwa() << endl;
+    cout << "================================================" << endl;
     this->kursy.push_back(kurs);
 }
 
 void Wydzial::wyswietlKursy() {
 
     if(kursy.size() == 0) {
-        cout << "Brak kursow na wydziale " + this->nazwa << endl;
+        cout << "================================================" << endl;
+        cout << "    Brak kursow na wydziale " + this->nazwa << endl;
+        cout << "================================================" << endl;
     }else {
 
-        cout << "Kursy na wydziale " + this->nazwa << endl;
+        cout << "================================================" << endl;
+        cout << "    Kursy na wydziale " + this->nazwa << endl;
+        cout << "================================================" << endl;
+
         for (int i = 0; i < this->kursy.size(); i++) {
-            cout << this->kursy[i]->getNazwa() << endl;
+            cout << "    " <<this->kursy[i]->getNazwa() << endl;
         }
+        cout << "================================================" << endl;
     }
 }
 
