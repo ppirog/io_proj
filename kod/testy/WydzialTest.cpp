@@ -2,7 +2,6 @@
 // Created by ola on 19.05.2024.
 //
 
-#include "testy/WydzialTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -14,8 +13,27 @@
 #include "Student.h"
 #include "System.h"
 #include "Kurs.h"
+
 using namespace std;
 
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+class WydzialTest {
+public:
+    void runTests();
+    WydzialTest();
+private:
+    void testDodajNauczyciela();
+    void testUsunNauczyciela();
+    void testDodajKurs();
+    void testUsunKurs();
+    void testGetNazwa();
+};
 
 void WydzialTest::runTests() {
     testDodajNauczyciela();
@@ -65,5 +83,4 @@ void WydzialTest::testGetNazwa() {
 WydzialTest::WydzialTest() {
     runTests();
     cout << "Wydzial tests passed" << endl;
-
 }
