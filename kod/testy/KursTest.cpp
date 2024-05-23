@@ -2,7 +2,6 @@
 // Created by ola on 19.05.2024.
 //
 
-#include "KursTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -17,6 +16,25 @@
 
 using namespace std;
 
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+class KursTest {
+public:
+    void runTests();
+    KursTest();
+private:
+    void testDodajNauczyciel();
+    void testDodajStudenta();
+    void testSetIGetNazwa();
+    void testGetNauczyciele();
+    void testGetStudenci();
+};
+
 void KursTest::runTests() {
     testDodajNauczyciel();
     testDodajStudenta();
@@ -24,7 +42,6 @@ void KursTest::runTests() {
     testGetNauczyciele();
     testGetStudenci();
 }
-
 
 void KursTest::testDodajNauczyciel() {
     Wydzial wydzial("Informatyka");
@@ -44,7 +61,6 @@ void KursTest::testDodajStudenta() {
     assert(kurs.getStudenci()[0] == &student);
 }
 
-
 void KursTest::testSetIGetNazwa() {
     Wydzial wydzial("Informatyka");
     Kurs kurs("Programowanie", &wydzial);
@@ -52,7 +68,6 @@ void KursTest::testSetIGetNazwa() {
     assert(kurs.getNazwa() == "Zaawansowane Programowanie");
     assert(kurs.getNazwa() != "Zaawansowane");
 }
-
 
 void KursTest::testGetNauczyciele() {
     Wydzial wydzial("Informatyka");
@@ -75,7 +90,8 @@ void KursTest::testGetStudenci() {
 KursTest::KursTest() {
     runTests();
     cout << "Kurs tests passed" << endl;
-
 }
+
+
 
 
