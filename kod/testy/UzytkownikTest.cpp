@@ -2,7 +2,6 @@
 // Created by ola on 19.05.2024.
 //
 
-#include "UzytkownikTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -14,7 +13,33 @@
 #include "Student.h"
 #include "System.h"
 #include "Kurs.h"
+
 using namespace std;
+
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+
+class UzytkownikTest {
+public:
+    void runTests();
+    UzytkownikTest();
+private:
+    void testGetImie();
+    void testGetNazwisko();
+    void testGetLogin();
+    void testGetHaslo();
+    void testSprawdzHaslo();
+    void testSetImie();
+    void testSetNazwisko();
+    void testSetLogin();
+    void testSetHaslo();
+};
+
 
 void UzytkownikTest::runTests() {
     testGetImie();
