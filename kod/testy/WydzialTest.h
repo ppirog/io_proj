@@ -39,5 +39,56 @@ private:
     void testGetNazwa();
 };
 
+void WydzialTest::runTests() {
+    testDodajNauczyciela();
+    testUsunNauczyciela();
+    testDodajKurs();
+    testUsunKurs();
+    testGetNazwa();
+}
+
+void WydzialTest::testDodajNauczyciela() {
+    Wydzial wydzial("Informatyka");
+    Nauczyciel nauczyciel1("Jan", "Kowalski","admin","admin");
+    wydzial.dodajNauczyciela(&nauczyciel1);
+    assert(wydzial.getNauczyciele().size() == 1);
+    assert(wydzial.getNauczyciele()[0] == &nauczyciel1);
+}
+
+void WydzialTest::testUsunNauczyciela() {
+    Wydzial wydzial("Informatyka");
+    Nauczyciel nauczyciel1("Jan", "Kowalski","admin","admin");
+    wydzial.dodajNauczyciela(&nauczyciel1);
+    wydzial.usunNauczyciela(&nauczyciel1);
+    assert(wydzial.getNauczyciele().size() == 0);
+}
+
+void WydzialTest::testDodajKurs() {
+    Wydzial wydzial("Informatyka");
+    Kurs kurs1("Programowanie",&wydzial);
+    wydzial.dodajKurs(&kurs1);
+    assert(wydzial.getKursy().size() == 1);
+    assert(wydzial.getKursy()[0] == &kurs1);
+}
+
+void WydzialTest::testUsunKurs() {
+    Wydzial wydzial("Informatyka");
+    Kurs kurs1("Programowanie",&wydzial);
+    wydzial.dodajKurs(&kurs1);
+    wydzial.usunKurs(&kurs1);
+    assert(wydzial.getKursy().size() == 0);
+}
+
+void WydzialTest::testGetNazwa() {
+    Wydzial wydzial("Informatyka");
+    assert(wydzial.getNazwa() == "Informatyka");
+}
+
+WydzialTest::WydzialTest() {
+    runTests();
+    cout << "Wydzial tests passed" << endl;
+
+}
+
 
 #endif //IO_PROJ_WYDZIALTEST_H

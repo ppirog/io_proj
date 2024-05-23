@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/g++.exe")
+set(CMAKE_CXX_COMPILER "D:/MinGW/bin/g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "13.1.0")
+set(CMAKE_CXX_COMPILER_VERSION "11.2.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "17")
@@ -22,11 +22,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/ar.exe")
-set(CMAKE_CXX_COMPILER_AR "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/ld.exe")
+set(CMAKE_AR "D:/MinGW/bin/ar.exe")
+set(CMAKE_CXX_COMPILER_AR "D:/MinGW/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "D:/MinGW/bin/ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "D:/MinGW/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "D:/MinGW/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
@@ -79,7 +79,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/include;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/x86_64-w64-mingw32/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "D:/MinGW/include/c++/11.2.0;D:/MinGW/include/c++/11.2.0/x86_64-w64-mingw32;D:/MinGW/include/c++/11.2.0/backward;D:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include;D:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed;D:/MinGW/x86_64-w64-mingw32/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "D:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0;D:/MinGW/lib/gcc;D:/MinGW/x86_64-w64-mingw32/lib;D:/MinGW/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
