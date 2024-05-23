@@ -2,7 +2,6 @@
 // Created by pawel on 19.05.2024.
 //
 
-#include "SystemTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -16,6 +15,28 @@
 #include "Kurs.h"
 
 using namespace std;
+
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+class SystemTest {
+public:
+    void runTests();
+    SystemTest();
+private:
+    void testZalogujIWyloguj();
+    void testDodajWydzial();
+    void testUsunWydzial();
+    void testDodajStudenta();
+    void testUsunStudenta();
+    void testCzyJestStudentem();
+    void testGetWydzialy();
+    void testGetStudenci();
+};
 
 void SystemTest::runTests() {
     testZalogujIWyloguj();
@@ -113,7 +134,6 @@ void SystemTest::testGetStudenci() {
 SystemTest::SystemTest() {
     runTests();
     cout << "System tests passed" << endl;
-
 }
 
 
