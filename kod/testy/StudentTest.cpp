@@ -2,7 +2,6 @@
 // Created by ola on 19.05.2024.
 //
 
-#include "StudentTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -17,13 +16,28 @@
 
 using namespace std;
 
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+class StudentTest {
+public:
+    void runTests();
+    StudentTest();
+private:
+    void testDodajKurs();
+    void testGetISetIndeks();
+    void testGetDolaczoneKursy();
+};
+
 void StudentTest::runTests() {
     testDodajKurs();
     testGetISetIndeks();
     testGetDolaczoneKursy();
 }
-
-
 
 void StudentTest::testDodajKurs() {
     Wydzial wydzial("Informatyka");
