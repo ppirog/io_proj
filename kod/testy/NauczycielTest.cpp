@@ -2,8 +2,6 @@
 // Created by ola on 19.05.2024.
 //
 
-#include "NauczycielTest.h"
-#include "SystemTest.h"
 #include <string>
 #include <vector>
 #include <cassert>
@@ -17,6 +15,27 @@
 #include "Kurs.h"
 
 using namespace std;
+
+class Uzytkownik;
+class Wydzial;
+class Nauczyciel;
+class Student;
+class Kurs;
+class System;
+
+class NauczycielTest {
+public:
+    void runTests();
+    NauczycielTest();
+private:
+    void testDodajKurs();
+    void testUsunKurs();
+    void testDodajWydzial();
+    void testUsunWydzial();
+    void testGetWydzialy();
+    void testGetProwadzoneKursy();
+};
+
 
 void NauczycielTest::runTests() {
     testDodajKurs();
